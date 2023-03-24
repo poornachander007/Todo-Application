@@ -1,0 +1,76 @@
+GET http://localhost:3000/ 
+### 
+// GET ALL TODOS  ( FOR test )
+GET http://localhost:3000/todos/
+###
+
+// GET list of All todos status='TO DO' API(1)
+GET http://localhost:3000/todos/?status=TO%20DO 
+### 
+
+// GET list of All todos priority='HIGH' API(1)
+GET http://localhost:3000/todos/?priority=HIGH 
+### 
+
+// GET list of All todos priority='HIGH' and status='IN PROGRESS' API(1)
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+### 
+
+// GET list of All todo contain todo='Play' API(1)
+GET http://localhost:3000/todos/?search_q=HTML
+### 
+
+//.....................................................
+
+// GET one todo by ID API(2)
+GET http://localhost:3000/todos/5/
+###
+
+//.....................................................
+
+// Add todo  API(3) ( Todo Successfully Added )
+POST http://localhost:3000/todos/
+Content-Type: application/json 
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+### 
+
+//.....................................................
+
+// Update todos status by todo ID API(4) ( Status Updated )
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json 
+
+{
+   "status": "DONE"
+}
+### 
+
+// Update todos priority by todo ID API(4) ( Priority Updated )
+PUT http://localhost:3000/todos/3/
+Content-Type: application/json 
+
+{
+  "priority": "HIGH"
+}
+### 
+
+// Update todos Todo by todo ID API(4) ( Todo Updated )
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json 
+
+{
+  "todo": "Some task"
+}
+### 
+
+//.....................................................
+
+// Delete todo by todo ID API(5) ( Todo Deleted )
+DELETE http://localhost:3000/todos/10/
+###
